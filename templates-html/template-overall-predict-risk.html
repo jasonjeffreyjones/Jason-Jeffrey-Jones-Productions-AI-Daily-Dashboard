@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Americans' AI Support predicted by Risk Preference | Jason Jeffrey Jones Productions' AI Daily Dashboard | TODAY_DATE</title>
+    <meta name="description" content="Each day I ask American adults if they support further development of AI. On this page, I correlate their risk preference with their AI support.">
+    <meta name="author" content="Jason Jeffrey Jones">
+	<meta name="date" content="TODAY_DATE">
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:published_time" content="2024-04-18"> <!-- Original publication date -->
+    <meta property="og:updated_time" content="TODAY_DATE"> <!-- Most recent update date -->
+	<link rel="icon" type="image/png" href="images/jjjpro-ai-daily-logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<style>
+		.seriesTicker {
+			font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+			font-weight: bold;
+			//text-transform: uppercase;
+		}	
+	</style>
+  </head>
+  <body id="top">
+	<div class="container">
+	
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="https://jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="images/jjjpro-ai-daily-logo.png" width="32" height="32" alt="AI Daily by JJJ Pro" class="me-2">
+        <span class="fs-4">AI Daily by Jason Jeffrey Jones Productions</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="https://jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="https://jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard/research-questions.html" class="nav-link active" aria-current="page">More</a></li>
+        <li class="nav-item"><a href="https://jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard/about.html" class="nav-link">About</a></li>
+      </ul>
+    </header>
+	
+	<p class="seriesTicker fs-3">How well does <span style="color: RISK_HEX_COLOR;">Stated Risk Preference</span> predict Americans' AI Support?</p>
+	<img src="images/RISK_FIGURE_FILENAME" class="img-fluid mx-2 my-2 d-block">
+	The current data support the following:
+	<ul>
+		RISK_TOPLINE_STATEMENT
+	</ul>
+	<span class="fs-6">Good to know:</span>
+	<ul class="fs-6">
+		RISK_MINOR_STATEMENTS
+	</ul>
+	
+	<h4>Methods, briefly</h4>
+	<p>General Risk Question from <cite><a href="https://doi.org/10.1111/j.1542-4774.2011.01015.x">Individual Risk Attitudes: Measurement, Determinants, and Behavioral Consequences</a></cite>.  For more detail, please read <cite><a href="https://jasonjones.ninja/thinking-machines-pondering-humans/agi-subsets.html#risk">Thinking Machines, Pondering Humans</a></cite>.</p>
+	<p>On a seven-point agreement scale, randomly selected American adults responded to the item: <em>I support further development of artificial intelligence.</em>  From WEEKLY_START_DATE forward, I have collected TOTAL_RESPONDENTS responses.</p>
+	<p>I have presented detailed methods in <cite><a href="https://arxiv.org/pdf/2412.05163" target="_blank">Americans' Support for AI Development - Measured Daily with Open Data and Methods</a></cite>.  The results in this PDF research article are, of course, out-of-date as compared to this <a href="https://jasonjones.ninja/social-science-dashboard-inator/">autonomous, daily-updating, social science dashboard inator</a> you are currently viewing.  Last updated on <time datetime="TODAY_DATE">TODAY_DATE</time>.</p>
+	<p>Do you like p-values, standard errors and such?  Inspect the collapsed details below to view the regression results that support the statements above.</p>
+	<p>Yes, you may see and use <a href="https://jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard/data/jjjp-ai-support-daily.csv">the raw survey data</a>.</p>
+	
+	<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDetails" aria-expanded="false" aria-controls="collapseDetails">
+		Click to show/hide Risk Preference details
+	</button>
+	<div class="collapse mt-3" id="collapseDetails">
+		<div class="card card-body d-inline-block">
+			<div class="alert alert-warning mt-2 p-2" role="alert">Below are the results from a single-variable linear model fit with Stated Risk Preference as the only predictor.</div>
+			<pre>RISK_LM_FIT_SUMMARY_TABLE</pre>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<p class="small">This page last automatically updated on TODAY_DATE.</p>
+	
+	<div class="alert alert-info mt-2 p-2" role="alert">Intrigued? Subscribe to my <a href="https://jasonjeffreyjones.substack.com/">once-weekly-or-less email newsletter</a> for updates on my research.</div>
+
+	<div class="container">
+	  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+		<div class="col-md-4 d-flex align-items-center">
+		  <a href="https://jasonjones.ninja/jason-jeffrey-jones-productions/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+			<img src="images/jjjp-logo-100px.jpg" width="32" height="32" alt="Jason Jeffrey Jones Productions" class="me-2">
+			<span class="fs-4">Jason Jeffrey Jones Productions</span>
+		  </a>
+		</div>
+
+		<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+			<li class="nav-item"><a href="#top" class="nav-link px-2 text-body-secondary"><i class="bi bi-arrow-up"></i> Back to Top</a></li>
+		</ul>
+	  </footer>
+	</div>
+	
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
