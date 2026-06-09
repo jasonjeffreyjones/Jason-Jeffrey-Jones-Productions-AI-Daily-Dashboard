@@ -75,9 +75,9 @@ aiDaily %>%
   ggtitle("AI Support by Generalized Trust over Time", "Monthly mean agreement with 'I support further\ndevelopment of artificial intelligence.'") +
   xlab("Month") + ylab("Mean Response") +
   # Set a sensible set of breaks on the date x-axis.
-  scale_x_date(date_breaks = "1 month", 
+  scale_x_date(date_breaks = "2 months", 
                date_labels = "%b\n%Y",
-               minor_breaks = NULL) +
+               date_minor_breaks = "1 month") +
   # Force full y scale. Add numbers and labels.
   scale_y_continuous(limits = c(-3,3), breaks = -3:3, labels = c("Strongly disagree = -3", 
                                                                  "Disagree = -2", 

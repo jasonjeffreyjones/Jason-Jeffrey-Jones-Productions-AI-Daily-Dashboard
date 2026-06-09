@@ -78,9 +78,9 @@ aiDaily %>%
   ggtitle("AI Support by Sex over Time", "Monthly mean agreement with 'I support further\ndevelopment of artificial intelligence.'") +
   xlab("Month") + ylab("Mean Response") +
   # Set a sensible set of breaks on the date x-axis.
-  scale_x_date(date_breaks = "1 month", 
+  scale_x_date(date_breaks = "2 months", 
                date_labels = "%b\n%Y",
-               minor_breaks = NULL) +
+               date_minor_breaks = "1 month") +
   # Force full y scale. Add numbers and labels.
   scale_y_continuous(limits = c(-3,3), breaks = -3:3, labels = c("Strongly disagree = -3", 
                                                                  "Disagree = -2", 
@@ -130,7 +130,7 @@ if (sexP < 0.05 && sexCoefficient > 0) {
   keyValuePairs[["SEX_TOPLINE_STATEMENT"]] = "<li><strong>Sex is a statistically significant predictor of AI Support.</strong></li>\n"
   keyValuePairs[["SEX_TOPLINE_STATEMENT"]] = paste(keyValuePairs[["SEX_TOPLINE_STATEMENT"]], "<li><strong>Females expressed greater AI Support.</strong></li>\n")
 } else {
-  keyValuePairs[["SEX_TOPLINE_STATEMENT"]] = "<li>Sex is NOT a statistically significant predictor of AI Support.</li>"
+  keyValuePairs[["SEX_TOPLINE_STATEMENT"]] = "<li>Sex is NOT a statistically significant predictor of AI Support.</li>\n"
 }
 
 # Add time interpretation to SEX_TOPLINE_STATEMENT
@@ -142,7 +142,7 @@ if (timeP < 0.05 && timeCoefficient > 0) {
 } else if (timeP < 0.05 && timeCoefficient < 0) {
   keyValuePairs[["SEX_TOPLINE_STATEMENT"]] = paste(keyValuePairs[["SEX_TOPLINE_STATEMENT"]], "<li><strong>Over time, AI Support decreased.</strong></li>\n")
 } else {
-  keyValuePairs[["SEX_TOPLINE_STATEMENT"]] = "<li>Time is NOT a statistically significant predictor of AI Support.</li>"
+  keyValuePairs[["SEX_TOPLINE_STATEMENT"]] = paste(keyValuePairs[["SEX_TOPLINE_STATEMENT"]], "<li>Time is NOT a statistically significant predictor of AI Support.</li>\n")
 }
 
 # Add interaction interpretation to SEX_TOPLINE_STATEMENT

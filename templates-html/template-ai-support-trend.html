@@ -18,7 +18,15 @@
 			font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
 			font-weight: bold;
 			//text-transform: uppercase;
-		}	
+		}
+
+		#trendTabs .nav-link {
+			font-weight: 600;
+		}
+
+		#trendTabsContent {
+			background-color: #ffffff;
+		}
 	</style>
   </head>
   <body id="top">
@@ -38,7 +46,51 @@
     </header>
 	
 	<p class="seriesTicker fs-3">Over time, has support for AI development changed?</p>
-	<img src="images/TREND_FIGURE_FILENAME" class="img-fluid mx-2 my-2 d-block">
+
+	<div class="mx-2">
+	  <ul class="nav nav-tabs" id="trendTabs" role="tablist">
+		<li class="nav-item" role="presentation">
+		  <button class="nav-link active" id="trend1-tab" data-bs-toggle="tab" data-bs-target="#trend1-pane" type="button" role="tab" aria-controls="trend1-pane" aria-selected="true">
+			Mean + trend
+		  </button>
+		</li>
+		<li class="nav-item" role="presentation">
+		  <button class="nav-link" id="trend2-tab" data-bs-toggle="tab" data-bs-target="#trend2-pane" type="button" role="tab" aria-controls="trend2-pane" aria-selected="false">
+			Response distribution
+		  </button>
+		</li>
+		<li class="nav-item" role="presentation">
+		  <button class="nav-link" id="trend3-tab" data-bs-toggle="tab" data-bs-target="#trend3-pane" type="button" role="tab" aria-controls="trend3-pane" aria-selected="false">
+			Zoomed means
+		  </button>
+		</li>
+	  </ul>
+
+	  <div class="tab-content border border-top-0 p-2" id="trendTabsContent">
+		<div class="tab-pane fade show active" id="trend1-pane" role="tabpanel" aria-labelledby="trend1-tab" tabindex="0">
+		  <a href="images/TREND_FIGURE_FILENAME" target="_blank">
+			<img src="images/TREND_FIGURE_FILENAME" class="d-block w-100" alt="Monthly mean support for AI development with confidence intervals and linear trend">
+		  </a>
+		</div>
+
+		<div class="tab-pane fade" id="trend2-pane" role="tabpanel" aria-labelledby="trend2-tab" tabindex="0">
+		  <a href="images/TREND_FIGURE_2_FILENAME" target="_blank">
+			<img src="images/TREND_FIGURE_2_FILENAME" class="d-block w-100" alt="Monthly stacked proportions of responses at each support level">
+		  </a>
+		</div>
+
+		<div class="tab-pane fade" id="trend3-pane" role="tabpanel" aria-labelledby="trend3-tab" tabindex="0">
+		  <a href="images/TREND_FIGURE_3_FILENAME" target="_blank">
+			<img src="images/TREND_FIGURE_3_FILENAME" class="d-block w-100" alt="Zoomed monthly mean support for AI development with connecting path and confidence intervals">
+		  </a>
+		</div>
+	  </div>
+
+	  <p class="text-muted small mt-2 mb-2">
+		Three charts are available. Click a tab to switch views. Click any chart to open the full SVG.
+	  </p>
+	</div>
+	
 	<span class="seriesTicker fs-3">TREND_OVERALL_STATEMENT</span>
 	<ul>
 		TREND_MINOR_STATEMENTS
