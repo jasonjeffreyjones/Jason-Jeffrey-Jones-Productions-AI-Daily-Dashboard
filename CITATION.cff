@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated arXiv preprint rather than the GitHub repository."
+title: "Support for further development of AI: code and data repository"
+authors:
+  - family-names: Jones
+    given-names: Jason Jeffrey
+preferred-citation:
+  type: article
+  title: "Support for AI Development: Automated Daily Measurement with Open Data and Code"
+  authors:
+    - family-names: Jones
+      given-names: Jason Jeffrey
+  year: 2026
+  url: "https://arxiv.org/abs/2412.05163"
