@@ -1,0 +1,13 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Downloaded/local data
+data/
+
+# Python virtual environments
+.venv/
+
+# Python cache
+__pycache__/
