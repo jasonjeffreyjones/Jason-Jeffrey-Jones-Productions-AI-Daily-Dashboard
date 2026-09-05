@@ -8,9 +8,8 @@
 #which Rscript
 #which python3
 
-# Specify this Rscript: ~/miniconda3/bin/Rscript
-Rscript /home/ec2-user/ai_daily/R/wrangle-qualtrics.R
-Rscript /home/ec2-user/ai_daily/R/wrangle-prolific-demographics.R
-python3 /home/ec2-user/ai_daily/python/ai_daily_upload_data.py
+Rscript $HOME/ai-daily/R/wrangle-qualtrics.R
+Rscript $HOME/ai-daily/R/wrangle-prolific-demographics.R
+"$HOME/ai-daily/.venv/bin/python" "$HOME/ai-daily/python/ai_daily_upload_data.py"
 
 echo "completed wrangle_and_upload.sh"

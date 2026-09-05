@@ -9,6 +9,7 @@ import re
 import subprocess
 import os
 from dotenv import load_dotenv
+BASE_DIR = os.path.join(os.path.expanduser("~"), "ai-daily")
 
 def main():
 	pageList = ["index", "ai-support-trend", "ai-polarization", "research-questions", "about", "overall-predict-risk", "overall-predict-age", "overall-predict-trust", "overall-predict-sex", "americans-say-about-ai"]
@@ -21,7 +22,7 @@ def main():
 	# The first loop executes each R script to create updated dictionaries.
 	for thisPage in pageList:
 		# Command to run dictionary-making R scripts with Rscript.
-		command = [f"Rscript /home/ec2-user/ai_daily/R/create-{thisPage}-dictionary.R"]
+		command = [f"Rscript {BASE_DIR}/R/create-{thisPage}-dictionary.R"]
 		
 		try:
 			result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True)
@@ -33,9 +34,9 @@ def main():
 	# The second loop uses the HTML templates to write out new HTML pages (locally) with data from the dictionaries.
 	for thisPage in pageList:
 		# Define file paths
-		input_file_path = f'/home/ec2-user/ai_daily/templates-html/template-{thisPage}.html'
-		dictionary_file_path = f'/home/ec2-user/ai_daily/json/{thisPage}.json'
-		output_file_path = f'/home/ec2-user/ai_daily/{thisPage}.html'
+		input_file_path = f'{BASE_DIR}/templates-html/template-{thisPage}.html'
+		dictionary_file_path = f'{BASE_DIR}/json/{thisPage}.json'
+		output_file_path = f'{BASE_DIR}/{thisPage}.html'
 
 		# Read the input file
 		with open(input_file_path, 'r') as file:
@@ -77,13 +78,13 @@ def main():
 	# Before the final loop, overwrite all images to recent versions.
 	# Pull the password from a local hidden file.
 	password = ""
-	#with open("/home/ec2-user/ai_daily/python/.ninjacreds", 'r') as file:
+	#with open("{BASE_DIR}/python/.ninjacreds", 'r') as file:
 	#	password = file.read().strip()
 	load_dotenv()  # grab environment variables from .env file
 	password = os.getenv("NINJA_PASSWORD")
 	username = os.getenv("NINJA_USERNAME")
 	
-	command = [f"sshpass -p '{password}' scp -P 21098 /home/ec2-user/ai_daily/images/*.* {username}@premium15.web-hosting.com:/home/{username}/public_html/social-science-dashboard-inator/jjjp-ai-daily-dashboard/images/"]
+	command = [f"sshpass -p '{password}' scp -P 21098 {BASE_DIR}/images/*.* {username}@premium15.web-hosting.com:/home/{username}/public_html/social-science-dashboard-inator/jjjp-ai-daily-dashboard/images/"]
 	try:
 		result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True)
 		print("Images overwritten")
@@ -93,7 +94,7 @@ def main():
 	# The third loop uses ssh to overwrite the live HTML pages with the newly updated local versions.
 	for thisPage in pageList:
 		# SSH to overwrite each page.
-		command = [f"sshpass -p '{password}' scp -O -P 21098 /home/ec2-user/ai_daily/{thisPage}.html {username}@premium15.web-hosting.com:/home/{username}/public_html/social-science-dashboard-inator/jjjp-ai-daily-dashboard/{thisPage}.html"]
+		command = [f"sshpass -p '{password}' scp -O -P 21098 {BASE_DIR}/{thisPage}.html {username}@premium15.web-hosting.com:/home/{username}/public_html/social-science-dashboard-inator/jjjp-ai-daily-dashboard/{thisPage}.html"]
 		
 		try:
 			result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True)

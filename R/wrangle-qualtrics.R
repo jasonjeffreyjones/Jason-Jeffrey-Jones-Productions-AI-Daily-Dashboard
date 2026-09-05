@@ -4,10 +4,9 @@
 # Write the output file to qualtrics-responses.csv
 
 # Use a directory check to see where the script is running.
-baseDirectory = "/home/ec2-user/ai_daily/" # Assume on the AWS server.
+baseDirectory = file.path(Sys.getenv("HOME"), "ai-daily", "")
 if (dir.exists(baseDirectory)) {
   # If on the AWS server, also be sure to explicitly point to libraries.
-  .libPaths(c("/home/ec2-user/miniconda3/lib/R/library", .libPaths()))
 } else {
   baseDirectory = "J:/Web Stuff/jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard/"
 }

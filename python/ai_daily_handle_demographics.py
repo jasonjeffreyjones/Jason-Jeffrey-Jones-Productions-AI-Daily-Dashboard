@@ -8,6 +8,7 @@ import time
 import datetime
 import os
 from dotenv import load_dotenv
+BASE_DIR = os.path.join(os.path.expanduser("~"), "ai-daily")
 
 def download_prolific_demographics(api_token, study_id):
 	# URL endpoint for studies
@@ -34,7 +35,7 @@ def download_prolific_demographics(api_token, study_id):
 		#print(response.text)
 		#return True
 		# The value in response.text is in csv format and contains demographics.
-		with open(f'/home/ec2-user/ai_daily/data/prolific-demographics-download-{current_date}.csv', 'w') as f:
+		with open(f'{BASE_DIR}/data/prolific-demographics-download-{current_date}.csv', 'w') as f:
 			f.write(response.text)
 		print(f"{current_date} download demographics from Prolific completed by {__file__}")
 	else:

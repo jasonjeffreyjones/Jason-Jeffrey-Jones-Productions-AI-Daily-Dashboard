@@ -13,6 +13,7 @@ import sys
 import datetime
 import subprocess
 from dotenv import load_dotenv
+BASE_DIR = os.path.join(os.path.expanduser("~"), "ai-daily")
 
 def main():
 	# Get the current date
@@ -22,7 +23,7 @@ def main():
 	current_date = current_date.strftime('%Y-%m-%d')
 	
 	# Path to the CSV file you want to upload
-	csv_file_path = f'/home/ec2-user/ai_daily/data/jjjp-ai-support-daily-{current_date}.csv'
+	csv_file_path = f'{BASE_DIR}/data/jjjp-ai-support-daily-{current_date}.csv'
 	
 	load_dotenv()  # grab environment variables from .env file
 	password = os.getenv("NINJA_PASSWORD")

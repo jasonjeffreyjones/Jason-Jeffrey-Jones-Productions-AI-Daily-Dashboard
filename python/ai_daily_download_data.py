@@ -9,6 +9,7 @@ import sys
 import datetime
 import os
 from dotenv import load_dotenv
+BASE_DIR = os.path.join(os.path.expanduser("~"), "ai-daily")
 
 def main():
 	load_dotenv()  # grab environment variables from .env file
@@ -55,7 +56,7 @@ def main():
 	
 	# 3. Download the export
 	download_response = requests.get(f"{base_url}/{export_job_id}/file", headers=headers, stream=True)
-	with open(f'/home/ec2-user/ai_daily/data/qualtrics-download-{current_date}.zip', 'wb') as f:
+	with open(f'{BASE_DIR}/data/qualtrics-download-{current_date}.zip', 'wb') as f:
 		for chunk in download_response.iter_content(chunk_size=8192):
 			f.write(chunk)
 	

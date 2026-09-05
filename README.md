@@ -9,12 +9,8 @@ This repository contains the source code that automates fielding daily surveys, 
 
 **[https://jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard](https://jasonjones.ninja/social-science-dashboard-inator/jjjp-ai-daily-dashboard)**
 
----
-
-## Note
+## Notes
 - This is one instantiation of a [Social Science Dashboard Inator](https://jasonjones.ninja/social-science-dashboard-inator/)
-
----
 
 ## Author
 
